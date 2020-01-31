@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alex.mapper.UserMapper">
+    <insert id="addUser" parameterType="com.alex.user.User">
+      INSERT INTO  USER(userName,phone) VALUES (#{userName},#{phone});
+    </insert>
+
+    <select id="findAllUser" resultMap="userList">
+      SELECT  * FROM USER;
+    </select>
+
+    <resultMap id="userList" type="com.alex.user.User">
+        <result column="id" property="id"/>
+        <result column="username" property="userName"/>
+        <result column="phone" property="phone"/>
+    </resultMap>
+</mapper>
