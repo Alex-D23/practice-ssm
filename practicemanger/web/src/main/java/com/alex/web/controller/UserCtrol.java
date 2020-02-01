@@ -23,6 +23,7 @@ public class UserCtrol {
     @RequestMapping("/addUser")
     String addUser(User user){
         userService.addUser(user);
+        System.out.println("nihao github");
         return "index";
     }
 }
